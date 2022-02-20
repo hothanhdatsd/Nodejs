@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 const slug = require('mongoose-slug-generator');
 
 mongoose.plugin(slug);
-const Course = new Schema({
+const Course = new mongoose.Schema({
     Name: { type: String, maxlength: 250 },
     desc: { type: String },
     Image: { type: String },
@@ -12,7 +12,8 @@ const Course = new Schema({
     videoID: { type: String },
     slug: { type: String, slug: "Name", unique: true },
     price: { type: String },
-    condition: { type: String }
+    condition: { type: String },
+    count: { type: Number }
 }, { collection: 'Courses' });
 
 module.exports = mongoose.model('Course', Course);

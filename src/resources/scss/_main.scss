@@ -57,6 +57,9 @@
     }
     &-item {
         margin: 15px 15px;
+        &:hover {
+            cursor: pointer;
+        }
     }
     &-list {
         border-right: 1px solid #E7F0F2;
@@ -68,6 +71,9 @@
         font-weight: 400;
         &-item {
             margin: 15px;
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
     &-page {
@@ -83,6 +89,9 @@
         opacity: 0.3;
         padding-top: 8px;
         border-top: 2px solid #E7F0F2;
+        &:hover {
+            cursor: pointer;
+        }
     }
     &-contain {}
 }

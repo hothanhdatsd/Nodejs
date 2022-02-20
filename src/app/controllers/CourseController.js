@@ -5,9 +5,7 @@ const { mongoseToObject } = require("../../util/mongoese");
 
 class NewsController {
     // GET news
-    index(req, res) {
-        res.send('course');
-    }
+
     show(req, res, next) {
             Course.findOne({ slug: req.params.slug })
                 .then(course =>
@@ -24,7 +22,7 @@ class NewsController {
         const course = new Course(req.body);
         course.save()
             .then(() => res.redirect('/'))
-            .catch()
+            .catch(next);
     }
     edit(req, res, next) {
             Course.findById(req.params.id)
@@ -46,5 +44,9 @@ class NewsController {
             .then(() => res.redirect('/me/stored/courses/'))
             .catch(next);
     }
+
+
+
 }
+
 module.exports = new NewsController();

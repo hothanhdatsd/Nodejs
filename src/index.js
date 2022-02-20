@@ -7,6 +7,8 @@ const hbs = handlebars.create({ extname: '.hbs' });
 const route = require('./routes');
 const db = require('./config/db');
 
+require('dotenv').config()
+
 
 const app = express();
 const port = 3000;
@@ -25,6 +27,13 @@ app.use(morgan('combined'));
 
 //Template engine
 app.engine('hbs', hbs.engine);
+// app.engine('hbs', handlebars({
+//     extname: '.hbs',
+//     helpers: {
+//         sum: (a, b) => a + b,
+//     }
+// }));
+
 
 
 

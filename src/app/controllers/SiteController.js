@@ -6,16 +6,21 @@ const { mutipleMongooseToObject } = require("../../util/mongoese");
 class siteController {
     // GET site
     index(req, res, next) {
-            Course.find({})
-                .then(courses => {
+        let perPage = 8;
+        let page = req.params.page || 1;
 
-                    res.render('home', { courses: mutipleMongooseToObject(courses) });
-                })
-                .catch(next);
-        }
-        // GET /search
-    search(req, res) {
-        res.send('SEARCH');
+        Course
+            .find()
+            .limit(perPage)
+            .exec((err, course) => {
+                Course.countDocuments((err, count) => {
+                    res.render('course/page', {
+                        course: mutipleMongooseToObject(course)
+                    });
+                });
+            });
     }
+
+
 }
 module.exports = new siteController();

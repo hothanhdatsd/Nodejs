@@ -114,9 +114,21 @@
         color: #fff;
         text-decoration: none;
     }
+    // &-user {
+    //     display: flex;
+    //     align-items: center;
+    // }
     &-user {
-        display: flex;
-        align-items: center;
+        text-align: center;
+        color: #000;
+        &-icon {
+            padding-top: 2px;
+            width: 21px;
+            height: 21px;
+        }
+        &-name {
+            color: #000;
+        }
     }
     &-avatar {
         width: 30px;
@@ -169,8 +181,8 @@
         width: 21px;
         height: 21px;
         position: absolute;
-        right: 32px;
-        top: 12px;
+        right: 20px;
+        top: 9px;
     }
     &-cart {
         color: #000;
@@ -179,4 +191,12 @@
         padding-right: 20px;
         cursor: pointer;
     }
+}
+
+.signup {
+    transform: translateX(130px);
+}
+
+.signin {
+    transform: translateX(70px);
 }
